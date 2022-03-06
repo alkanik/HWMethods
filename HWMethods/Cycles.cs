@@ -117,6 +117,22 @@ namespace HWMethods
 
 			return n;
 		}
+
+		public static int GetNumberOfOddDigits(int a)
+		{
+			int x = a % 10;
+			int number = 0;
+			while (x != 0)
+			{
+				a = a / 10;
+				if (x%2 == 1)
+                {
+					number++;
+                }
+				x = a % 10;
+			}
+            return number;
+		}
 	}
 }
 
