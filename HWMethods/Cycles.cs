@@ -145,6 +145,33 @@ namespace HWMethods
 			}
 			return result;
 		}
+
+		public static void WriteNumbersWithMoreSumEvenDigits(int a)
+		{
+			for (int i = 1; i <= a; i++)
+			{
+				int sumOdd = 0;
+				int sumEven = 0;
+				int j = i;
+				while (j != 0)
+				{
+					int tmp = j % 10;
+					if (tmp%2 == 1)
+					{
+						sumOdd += tmp;
+					}
+					else
+					{
+						sumEven += tmp;
+					}
+					j = j / 10;
+				}
+				if (sumEven > sumOdd)
+				{
+					Console.WriteLine(i);
+				}
+			}
+		}
 	}
 }
 
