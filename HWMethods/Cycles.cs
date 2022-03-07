@@ -133,6 +133,18 @@ namespace HWMethods
 			}
             return number;
 		}
+
+		public static string WriteNumberBackwards(int a)
+		{
+			string result = "";
+			while (a != 0)
+			{
+				int tmp = a % 10;
+				result = result + Convert.ToString(tmp);
+				a = a / 10;
+			}
+			return result;
+		}
 	}
 }
 
