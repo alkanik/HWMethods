@@ -78,6 +78,18 @@ namespace HWMethods
 
 			return indexOfMaximalElement;
 		}
+
+		public static int GetSumOfOddArraysElements(int[] a)
+		{
+			int sumOfOddElements = 0;
+			
+			for (int i = 1; i < a.Length; i+=2)
+			{
+				sumOfOddElements += a[i];
+			}
+
+			return sumOfOddElements;
+		}
 	}
 
 	

@@ -6,4 +6,4 @@ int[] a = ArraysMethods.GenerateArray(n);
 
 //ArraysMethods.PrintAllArraysElements(a);
 
-Console.WriteLine(ArraysMethods.FindIndexOfMaximalArraysElement(a));
+Console.WriteLine(ArraysMethods.GetSumOfOddArraysElements(a));
