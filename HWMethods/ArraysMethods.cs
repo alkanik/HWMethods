@@ -35,6 +35,19 @@ namespace HWMethods
 			}
 			return min;
 		}
+
+		public static int FindMaximalArraysElement(int[] a)
+		{
+			int max = a[0];
+			for (int i = 1; i < a.Length; i++)
+			{
+				if (a[i] > max)
+				{
+					max = a[i];
+				}
+			}
+			return max;
+		}
 	}
 
 	

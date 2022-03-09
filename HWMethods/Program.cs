@@ -4,6 +4,6 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 int[] a = ArraysMethods.GenerateArray(n);
 
-ArraysMethods.PrintAllArraysElements(a);
+//ArraysMethods.PrintAllArraysElements(a);
 
-Console.WriteLine(ArraysMethods.FindMinimalArraysElement(a));
+Console.WriteLine(ArraysMethods.FindMaximalArraysElement(a));
