@@ -48,6 +48,36 @@ namespace HWMethods
 			}
 			return max;
 		}
+		public static int FindIndexOfMinimalArraysElement(int[] a)
+		{
+			int min = a[0];
+			int indexOfMinimalElement = 0;
+			for (int i = 1; i < a.Length; i++)
+			{
+				if (a[i] > min)
+				{
+					min = a[i];
+					indexOfMinimalElement = i;
+				}
+			}
+			
+			return indexOfMinimalElement;
+		}
+		public static int FindIndexOfMaximalArraysElement(int[] a)
+		{
+			int max = a[0];
+			int indexOfMaximalElement = 0;
+			for (int i = 1; i < a.Length; i++)
+			{
+				if (a[i] > max)
+				{
+					max = a[i];
+					indexOfMaximalElement = i;
+				}
+			}
+
+			return indexOfMaximalElement;
+		}
 	}
 
 	
