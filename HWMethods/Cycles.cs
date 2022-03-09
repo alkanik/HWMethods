@@ -172,6 +172,9 @@ namespace HWMethods
 				}
 			}
 		}
+
+		//public static string FindTheSameDigits(int a, int b)
+		
 	}
 }
 

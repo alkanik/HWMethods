@@ -1,10 +1,9 @@
 ﻿using HWMethods;
 
-// Пользователь вводит целое положительное  число (N).
-// Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
+int n = Convert.ToInt32(Console.ReadLine());
 
+int[] a = ArraysMethods.GenerateArray(n);
 
-Console.WriteLine("Введите целое положительное число:");
-int a = Convert.ToInt32(Console.ReadLine());
+ArraysMethods.PrintAllArraysElements(a);
 
-Cycles.WriteNumbersWithMoreSumEvenDigits(a);
+Console.WriteLine(ArraysMethods.FindMinimalArraysElement(a));
