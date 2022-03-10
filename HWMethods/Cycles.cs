@@ -172,9 +172,35 @@ namespace HWMethods
 				}
 			}
 		}
+		//Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
+        //Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
 
-		//public static string FindTheSameDigits(int a, int b)
-		
+		public static string FindTheSameDigits(int a, int b)
+		{
+			bool result = false;
+
+			while (a != 0)
+			{
+				int digitA = a % 10;
+				while (b != 0)
+				{
+					int digitB = b % 10;
+					if (digitA == digitB)
+					{
+						result = true;
+					}
+					b = b / 10;
+				}
+				a = a / 10;
+			}
+			string answer = "NO";
+			if (result == true)
+            {
+				answer = "YES";
+            }
+
+			return answer;
+		}
 	}
 }
 
