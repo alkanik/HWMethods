@@ -4,6 +4,6 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 int[] a = ArraysMethods.GenerateArray(n);
 
-//ArraysMethods.PrintAllArraysElements(a);
+ArraysMethods.PrintArray(a);
 
-Console.WriteLine(ArraysMethods.GetSumOfOddArraysElements(a));
+ArraysMethods.PrintArray(ArraysMethods.ReverseArray(a));
