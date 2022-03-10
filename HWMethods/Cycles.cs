@@ -16,6 +16,34 @@ namespace HWMethods
             return result;
 		}
 
+		public static int[] GetNumbersDivisibleByA(int a)
+		{
+			if (a > 1000)
+			{
+				int[] result = new int[0];
+				return result;
+			}
+			else
+			{
+				int counter = 0;
+
+				for (int i = a; i <= 1000; i += a)
+				{
+					counter++;
+				}
+
+				int[] result = new int[counter];
+				int j = 0;
+
+				for (int i = a; i <= 1000; i += a)
+                {
+					result[j] = i;
+					j++;
+                }
+				return result;
+			}
+		}
+
 		public static int FindNumberOfNumbersWithLessSquare(int a)
 		{
 			int number = 0;
@@ -172,8 +200,6 @@ namespace HWMethods
 				}
 			}
 		}
-		//Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
-        //Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
 
 		public static string FindTheSameDigits(int a, int b)
 		{
@@ -188,6 +214,7 @@ namespace HWMethods
 					if (digitA == digitB)
 					{
 						result = true;
+						break;
 					}
 					b = b / 10;
 				}

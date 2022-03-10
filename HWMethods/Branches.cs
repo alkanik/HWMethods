@@ -43,54 +43,79 @@ namespace HWMethods
 			}
 		}
 
-		public static void WriteNumbersInAscendingOrder(int a, int b, int c)
+		public static int[] WriteNumbersInAscendingOrder(int a, int b, int c)
 		{
+			int[] result = new int[3];
+
 			if (a >= b && a >= c && b >= c)
 			{
-				Console.WriteLine($"{c} {b} {a}");
+				result[0] = c;
+				result[1] = b;
+				result[2] = a;
 			}
 			else if (a >= b && a >= c && c >= b)
 			{
-				Console.WriteLine($"{b} {c} {a}");
+				result[0] = b;
+				result[1] = c;
+				result[2] = a;
 			}
 			else if (b >= a && b >= c && a >= c)
 			{
-				Console.WriteLine($"{c} {a} {b}");
+				result[0] = c;
+				result[1] = a;
+				result[2] = b;
 			}
 			else if (b >= a && b >= c && c >= a)
 			{
-				Console.WriteLine($"{a} {c} {b}");
+				result[0] = a;
+				result[1] = c;
+				result[2] = b;
 			}
 			else if (c >= a && c >= b && a >= b)
 			{
-				Console.WriteLine($"{b} {a} {c}");
+				result[0] = b;
+				result[1] = a;
+				result[2] = c;
 			}
 			else
 			{
-				Console.WriteLine($"{a} {b} {c}");
+				result[0] = a;
+				result[1] = b;
+				result[2] = c;
 			}
+
+			return result;
 		}
 
-		public static void WriteSolutionOfQuadraticEquation(double a, double b, double c)
+		public static double[] GetRootOfQuadraticEquation(double a, double b, double c)
 		{
+			if (a == 0)
+			{
+				throw new Exception("a must be !=0");
+			}
+
 			double discriminant = b * b - 4 * a * c;
 			double x1;
 
 			if (discriminant == 0)
 			{
 				x1 = -b / 2 * a;
-				Console.WriteLine($"x = {x1}");
+				double[] result = new double[1] { x1 };
+				return result;
 			}
 			else if (discriminant > 0)
 			{
 				x1 = (-b + Math.Sqrt(discriminant)) / 2 * a;
 				double x2 = (-b - Math.Sqrt(discriminant)) / 2 * a;
-				Console.WriteLine($"x1 = {x1}, x2 = {x2}");
+				double[] result = new double[2] { x1, x2 };
+				return result;
 			}
 			else
 			{
-				Console.WriteLine("Действительных корней нет.");
+				double[] result = new double[0];
+				return result;
 			}
+			
 		}
 
 		public static string WriteNumberInWords(int a)

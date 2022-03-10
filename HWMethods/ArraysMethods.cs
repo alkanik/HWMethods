@@ -24,6 +24,15 @@ namespace HWMethods
 			Console.WriteLine();
 		}
 
+		public static void PrintDoubleArray(double[] a)
+		{
+			for (int i = 0; i < a.Length; i++)
+			{
+				Console.Write(a[i] + " ");
+			}
+			Console.WriteLine();
+		}
+
 		public static int[] CopyArray(int[] a)
 		{
 			int[] newArray = new int[a.Length];
