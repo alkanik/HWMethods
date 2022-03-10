@@ -92,7 +92,7 @@ namespace HWMethods
 		{
 			int sumOfOddElements = 0;
 			
-			for (int i = 1; i < a.Length; i+=2)
+			for (int i = 1; i <= a.Length; i+=2)
 			{
 				sumOfOddElements += a[i];
 			}
@@ -121,6 +121,31 @@ namespace HWMethods
 				numberOfOddElements += 1;
 			}
 			return numberOfOddElements;
+		}
+
+		public static int[] SwapHalves(int[] a)
+		{
+			int[] result = CopyArray(a);
+
+			if (a.Length % 2 == 0)
+			{
+				for (int i = 0; i < (a.Length / 2); i++)
+				{
+					int tmp = result[i];
+					result[i] = result[(result.Length / 2) + i];
+					result[(result.Length / 2) + i] = tmp;
+				}
+			}
+			else
+			{
+				for (int i = 0; i < (a.Length / 2); i++)
+				{
+					int tmp = result[i];
+					result[i] = result[(result.Length / 2) + 1+ i];
+					result[(result.Length / 2) + 1+i] = tmp;
+				}
+			}
+			return result;
 		}
 	}
 

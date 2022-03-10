@@ -6,4 +6,4 @@ int[] a = ArraysMethods.GenerateArray(n);
 
 ArraysMethods.PrintArray(a);
 
-Console.WriteLine(ArraysMethods.GetNumberOfOddElements(a));
+ArraysMethods.PrintArray(ArraysMethods.SwapHalves(a));
