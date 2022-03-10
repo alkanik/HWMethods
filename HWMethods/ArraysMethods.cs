@@ -111,6 +111,17 @@ namespace HWMethods
 			}
 			return result;
 		}
+
+		public static int GetNumberOfOddElements(int[] a)
+		{
+			int numberOfOddElements = 0;
+
+			for (int i = 1; i <= a.Length; i += 2)
+			{
+				numberOfOddElements += 1;
+			}
+			return numberOfOddElements;
+		}
 	}
 
 	
