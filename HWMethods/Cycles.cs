@@ -48,9 +48,12 @@ namespace HWMethods
 		{
 			int number = 0;
 
-			for (int i = 1; i * i < a; i++)
+			if (a > 0)
 			{
-				number++;
+				for (int i = 1; i * i < a; i++)
+				{
+					number++;
+				}
 			}
 			return number;
 		}
@@ -94,6 +97,11 @@ namespace HWMethods
 
 		public static int GetFibonacciSeriesNumber(int n)
 		{
+			if (n <= 0)
+			{
+				throw new Exception("n must be positive number");
+			}
+
 			int a = 1;
 			int b = 1;
 			int tmp = 0;
@@ -109,6 +117,15 @@ namespace HWMethods
 
 		public static int GetGreatestCommonDivisor(int a, int b)
 		{
+			if (a <= 0)
+			{
+				throw new Exception("a must be positive");
+			}
+			if (b <= 0)
+			{
+				throw new Exception("b must be positive");
+			}
+
 			while (a != b)
 			{
 				if (a > b)
@@ -125,6 +142,11 @@ namespace HWMethods
 
 		public static int GetNumberByHalfDivision(int a)
 		{
+			if (a <= 0)
+			{
+				throw new Exception("a must be positive");
+			}
+
 			int right = a;
 			int left = 0;
 			int n = 0;
@@ -176,6 +198,11 @@ namespace HWMethods
 
 		public static void WriteNumbersWithMoreSumEvenDigits(int a)
 		{
+			if (a <= 0)
+			{
+				throw new Exception("a must be positive");
+			}
+
 			for (int i = 1; i <= a; i++)
 			{
 				int sumOdd = 0;
@@ -203,6 +230,15 @@ namespace HWMethods
 
 		public static string FindTheSameDigits(int a, int b)
 		{
+			if (a <= 0)
+			{
+				throw new Exception("a must be positive");
+			}
+			if (b <= 0)
+			{
+				throw new Exception("b must be positive");
+			}
+
 			bool result = false;
 
 			while (a != 0)

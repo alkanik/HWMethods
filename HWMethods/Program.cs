@@ -1,9 +1,9 @@
 ﻿using HWMethods;
 
-int a = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
-//int[] a = ArraysMethods.GenerateArray(n);
+int[] a = ArraysMethods.GenerateArray(n);
 
-//ArraysMethods.PrintArray(a);
+ArraysMethods.PrintArray(a);
 
-ArraysMethods.PrintArray(Cycles.GetNumbersDivisibleByA(a));
+ArraysMethods.PrintArray(ArraysMethods.SortByAscending(a));

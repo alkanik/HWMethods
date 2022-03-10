@@ -156,6 +156,27 @@ namespace HWMethods
 			}
 			return result;
 		}
+
+		public static int[] SortByAscending(int[] a)
+        {
+			int[] result = CopyArray(a);
+			int tmp = 0;
+			for (int i = 0; i < result.Length - 1; i++)
+			{
+				for (int j = i + 1; j < result.Length; j++)
+				{
+					if (result[i] > result[j])
+					{
+						tmp = result[i];
+						result[i] = result[j];
+						result[j] = tmp;
+					}
+				}
+			}
+
+
+			return result;
+        }
 	}
 
 	
