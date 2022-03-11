@@ -6,4 +6,4 @@ int[] a = ArraysMethods.GenerateArray(n);
 
 ArraysMethods.PrintArray(a);
 
-ArraysMethods.PrintArray(ArraysMethods.SortByAscending(a));
+ArraysMethods.PrintArray(ArraysMethods.SortSelectDescending(a));

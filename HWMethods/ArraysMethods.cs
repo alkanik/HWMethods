@@ -157,7 +157,7 @@ namespace HWMethods
 			return result;
 		}
 
-		public static int[] SortByAscending(int[] a)
+		public static int[] SortBubbleAscending(int[] a)
         {
 			int[] result = CopyArray(a);
 			int tmp = 0;
@@ -173,12 +173,30 @@ namespace HWMethods
 					}
 				}
 			}
-
-
 			return result;
         }
-	}
 
-	
+		public static int[] SortSelectDescending(int[] a)
+        {
+			int[] result = CopyArray(a);
+			for (int i = result.Length - 1; i >= 0; i--)
+			{
+				int max = i;
+				for (int j = i - 1; j >= 0; j--)
+				{
+					if (result[j].CompareTo(result[max]) < 0)
+					{
+						max = j;
+					}
+				}
+
+				int tmp = result[i];
+				result[i] = result[max];
+				result[max] = tmp;
+			}
+
+			return result;
+		}
+	}
 }
 
