@@ -1,9 +1,10 @@
 ﻿using HWMethods;
 
-int n = Convert.ToInt32(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine());
+int y = Convert.ToInt32(Console.ReadLine());
 
-int[] a = ArraysMethods.GenerateArray(n);
+int[,] a = TwoDArraysController.GenerateRandom(x,y);
 
-ArraysMethods.PrintArray(a);
+TwoDArraysController.Print(a);
 
-ArraysMethods.PrintArray(ArraysMethods.SortSelectDescending(a));
+Console.WriteLine(TwoDArraysController.GetMinimalElement(a));

@@ -15,12 +15,12 @@ namespace HWMethods
 			return a;
 		}
 		
-		public static void PrintArray(int[] a)
+		public static void PrintIntArray(int[] a)
 		{
 			for (int i = 0; i < a.Length; i++)
 			{
-				Console.Write(a[i] + " ");
-			}
+				Console.Write($"{a[i]} ");
+            }
 			Console.WriteLine();
 		}
 
@@ -41,7 +41,7 @@ namespace HWMethods
 		}
 		
 
-		public static int FindMinimalArraysElement(int[] a)
+		public static int FindMinimalElement(int[] a)
 		{
 			int min = a[0];
 			for (int i = 1; i< a.Length; i++)
@@ -54,7 +54,7 @@ namespace HWMethods
 			return min;
 		}
 
-		public static int FindMaximalArraysElement(int[] a)
+		public static int FindMaximalElement(int[] a)
 		{
 			int max = a[0];
 			for (int i = 1; i < a.Length; i++)
@@ -66,7 +66,7 @@ namespace HWMethods
 			}
 			return max;
 		}
-		public static int FindIndexOfMinimalArraysElement(int[] a)
+		public static int FindIndexOfMinimalElement(int[] a)
 		{
 			int min = a[0];
 			int indexOfMinimalElement = 0;
@@ -81,7 +81,7 @@ namespace HWMethods
 			
 			return indexOfMinimalElement;
 		}
-		public static int FindIndexOfMaximalArraysElement(int[] a)
+		public static int FindIndexOfMaximalElement(int[] a)
 		{
 			int max = a[0];
 			int indexOfMaximalElement = 0;
@@ -97,7 +97,7 @@ namespace HWMethods
 			return indexOfMaximalElement;
 		}
 
-		public static int GetSumOfOddArraysElements(int[] a)
+		public static int GetSumOfOddElements(int[] a)
 		{
 			int sumOfOddElements = 0;
 			
@@ -157,7 +157,7 @@ namespace HWMethods
 			return result;
 		}
 
-		public static int[] SortBubbleAscending(int[] a)
+		public static int[] SortAscending(int[] a)
         {
 			int[] result = CopyArray(a);
 			int tmp = 0;
@@ -176,7 +176,7 @@ namespace HWMethods
 			return result;
         }
 
-		public static int[] SortSelectDescending(int[] a)
+		public static int[] SortDescending(int[] a)
         {
 			int[] result = CopyArray(a);
 			for (int i = result.Length - 1; i >= 0; i--)
@@ -199,4 +199,3 @@ namespace HWMethods
 		}
 	}
 }
-
