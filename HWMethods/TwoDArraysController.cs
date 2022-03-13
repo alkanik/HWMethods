@@ -96,6 +96,26 @@ namespace HWMethods
 			return maxIndex;
 		}
 
+		public static int GetCountElementsLargerThanNeighbors(int[,] a)
+        {
+			int count = 0;
+			for (int i = 0; i<a.GetLength(0); i++)
+            {
+				for (int j=0; j<a.GetLength(1); j++)
+                {
+					if( (i==0 || a[i,j]>a[i-1,j])
+						&& (i==a.GetLength(0)-1 || a[i,j]>a[i+1,j])
+						&& (j == 0 || a[i, j] > a[i, j-1])
+						&& (j == a.GetLength(1) - 1 || a[i, j] > a[i, j+1])
+						)
+                    {
+						count++;
+                    }
+                }
+            }
+			return count;
+        }
+
 		public static int[,] GenerateRandom(int lengthX, int lengthY)
 		{
 			Random r = new Random();
