@@ -1,10 +1,10 @@
 ﻿using System;
 namespace HWMethods
 {
-	static class Variables
+	public static class VariablesController
 	{
 
-		public static int GetResultOfDevision(int a, int b)
+		public static int GetResultOfDivision(int a, int b)
 		{
 			if (b==0)
 			{
@@ -13,8 +13,12 @@ namespace HWMethods
 			return a / b;
 		}
 
-		public static int GetRemainderOfDevision(int a, int b)
+		public static int GetRemainderOfDivision(int a, int b)
 		{
+			if (b == 0)
+			{
+				throw new Exception("b must be !=0");
+			}
 			return a % b;
 		}
 		
@@ -22,7 +26,7 @@ namespace HWMethods
 		{
 			if (a == b)
 			{
-				throw new Exception("a must be !=b");
+				throw new Exception("a can't be equal b");
 			}
 			return (5 * a + b * b) / (b - a);
 		}
@@ -38,13 +42,14 @@ namespace HWMethods
 		{
 			if (a == 0)
 			{
-				throw new Exception("a must be !=0");
+				throw new Exception("a can't be equal 0");
 			}
 
-			return (c - b) / a;
+			double result = (c - b) / a;
+			return result;
 		}
 
-		public static void WriteStraightLineEquation(double x1, double y1, double x2, double y2)
+		public static string WriteStraightLineEquation(double x1, double y1, double x2, double y2)
 		{
 			if (x1 == x2)
 			{
@@ -53,7 +58,8 @@ namespace HWMethods
 
 			double a = (y1 - y2) / (x1 - x2);
 			double b = y2 - a * x2;
-			Console.WriteLine($"Y = {a}X + {b}");
+			string result = $"Y = {a}X + {b}";
+			return result;
 		}
 
 	}

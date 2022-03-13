@@ -1,12 +1,8 @@
 ﻿using HWMethods;
 
-int x = Convert.ToInt32(Console.ReadLine());
-int y = Convert.ToInt32(Console.ReadLine());
+double x1 = 12;
+double y1 = -1;
+double x2 = -2;
+double y2 = 10;
 
-int[,] a = TwoDArraysController.GenerateRandom(x,y);
-
-TwoDArraysController.Print(a);
-
-Console.WriteLine();
-
-TwoDArraysController.Print(TwoDArraysController.FlipMainDiagonal(a));
+Console.Write(VariablesController.WriteStraightLineEquation(x1,y1,x2,y2));

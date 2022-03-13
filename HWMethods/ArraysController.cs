@@ -1,7 +1,7 @@
 ﻿using System;
 namespace HWMethods
 {
-	public class ArraysMethods
+	public class ArraysController
 	{
 		public static int[] GenerateArray(int length)
 		{

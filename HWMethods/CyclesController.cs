@@ -1,7 +1,7 @@
 ﻿using System;
 namespace HWMethods
 {
-	public class Cycles
+	public class CyclesController
 	{
 		public static int Exponentiate(int a, int b)
 		{

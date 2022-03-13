@@ -1,7 +1,7 @@
 ﻿using System;
 namespace HWMethods
 {
-	public class Branches
+	public class BranchesController
 	{
 		public static void CalculateTheValue(int a, int b)
 		{
