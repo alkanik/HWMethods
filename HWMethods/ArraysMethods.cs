@@ -184,7 +184,7 @@ namespace HWMethods
 				int max = i;
 				for (int j = i - 1; j >= 0; j--)
 				{
-					if (result[j].CompareTo(result[max]) < 0)
+					if (result[j] < result[max])
 					{
 						max = j;
 					}
