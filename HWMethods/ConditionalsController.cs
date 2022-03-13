@@ -1,46 +1,60 @@
 ﻿using System;
 namespace HWMethods
 {
-	public class BranchesController
+	public class ConditionalsController
 	{
-		public static void CalculateTheValue(int a, int b)
+		public static int CalculateValue(int a, int b)
 		{
+			int result;
 			if (a > b)
 			{
-				Console.WriteLine("A + B = " + (a + b));
+				result = a + b;
 			}
 			else if (a == b)
 			{
-				Console.WriteLine("A * B = " + (a * b));
+				result = a * b;
 			}
 			else
 			{
-				Console.WriteLine("A - B = " + (a - b));
+				result = a - b;
 			}
+			return result;
 		}
 
-		public static void WriteQuarter(double x, double y)
+		public enum Quarters
+        {
+			I,
+			II,
+			III,
+			IV,
+			OneAxle
+		}
+
+		public static Quarters GetQuarter(double x, double y)
 		{
+			Quarters result;
+
 			if (x > 0 && y > 0)
 			{
-				Console.WriteLine("Точка принадлежит 1 четверти");
+				result = Quarters.I;
 			}
 			else if (x < 0 && y > 0)
 			{
-				Console.WriteLine("Точка принадлежит 2 четверти");
+				result = Quarters.II;
 			}
 			else if (x < 0 && y < 0)
 			{
-				Console.WriteLine("Точка принадлежит 3 четверти");
+				result = Quarters.III;
 			}
 			else if (x > 0 && y < 0)
 			{
-				Console.WriteLine("Точка принадлежит 4 четверти");
+				result = Quarters.IV;
 			}
 			else
 			{
-				Console.WriteLine("Точка лежит на оси координат");
+				result = Quarters.OneAxle;
 			}
+			return result;
 		}
 
 		public static int[] WriteNumbersInAscendingOrder(int a, int b, int c)
