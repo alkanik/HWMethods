@@ -71,6 +71,31 @@ namespace HWMethods
 			return minIndex;
 		}
 
+		public static int[] GetMaximalElementsIndex(int[,] a)
+		{
+
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
+			int max = a[0, 0];
+			int[] maxIndex = new int[2];
+			for (int i = 0; i < a.GetLength(0); i++)
+			{
+				for (int j = 0; j < a.GetLength(1); j++)
+				{
+					if (a[i, j] > max)
+					{
+						max = a[i, j];
+						maxIndex[0] = i;
+						maxIndex[1] = j;
+					}
+				}
+			}
+			return maxIndex;
+		}
+
 		public static int[,] GenerateRandom(int lengthX, int lengthY)
 		{
 			Random r = new Random();
