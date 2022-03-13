@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1700.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWMethods", "HWMethods\HWMethods.csproj", "{C3495BD2-F7B2-46F9-868D-DAA45E3B5FC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWMethods.Test", "HWMethods.Test\HWMethods.Test.csproj", "{84BE87C9-EE8B-40FC-9D6C-ADF25210DC47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C3495BD2-F7B2-46F9-868D-DAA45E3B5FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3495BD2-F7B2-46F9-868D-DAA45E3B5FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3495BD2-F7B2-46F9-868D-DAA45E3B5FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BE87C9-EE8B-40FC-9D6C-ADF25210DC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BE87C9-EE8B-40FC-9D6C-ADF25210DC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BE87C9-EE8B-40FC-9D6C-ADF25210DC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BE87C9-EE8B-40FC-9D6C-ADF25210DC47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
