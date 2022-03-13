@@ -7,4 +7,4 @@ int[,] a = TwoDArraysController.GenerateRandom(x,y);
 
 TwoDArraysController.Print(a);
 
-Console.WriteLine(TwoDArraysController.GetMinimalElement(a));
+Console.WriteLine(TwoDArraysController.GetMaximalElement(a));

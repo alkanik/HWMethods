@@ -19,6 +19,22 @@ namespace HWMethods
 			return min;
 		}
 
+		public static int GetMaximalElement(int[,] a)
+		{
+			int max = a[0, 0];
+			for (int i = 0; i < a.GetLength(0); i++)
+			{
+				for (int j = 0; j < a.GetLength(1); j++)
+				{
+					if (a[i, j] > max)
+					{
+						max = a[i, j];
+					}
+				}
+			}
+			return max;
+		}
+
 		public static int[,] GenerateRandom(int lengthX, int lengthY)
 		{
 			Random r = new Random();
