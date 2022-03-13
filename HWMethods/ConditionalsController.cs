@@ -57,7 +57,7 @@ namespace HWMethods
 			return result;
 		}
 
-		public static int[] WriteNumbersInAscendingOrder(int a, int b, int c)
+		public static int[] SortAscendingOrder(int a, int b, int c)
 		{
 			int[] result = new int[3];
 
@@ -101,7 +101,7 @@ namespace HWMethods
 			return result;
 		}
 
-		public static double[] GetRootOfQuadraticEquation(double a, double b, double c)
+		public static double[] GetRootsOfQuadraticEquation(double a, double b, double c)
 		{
 			if (a == 0)
 			{

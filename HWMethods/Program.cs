@@ -1,6 +1,7 @@
 ﻿using HWMethods;
 
-double x = -3;
-double y = 0;
+double a = 1;
+double b = 1;
+double c = 1;
 
-Console.Write(ConditionalsController.GetQuarter(x,y));
+ArraysController.PrintDoubleArray(ConditionalsController.GetRootsOfQuadraticEquation(a,b,c));
