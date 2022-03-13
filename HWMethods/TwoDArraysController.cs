@@ -5,6 +5,11 @@ namespace HWMethods
 	{
 		public static int GetMinimalElement(int[,] a)
         {
+			if (a.Length==0)
+            {
+				throw new Exception("a can't be null");
+            }
+
 			int min = a[0,0];
 			for (int i = 0; i < a.GetLength(0); i++)
 			{
@@ -21,6 +26,12 @@ namespace HWMethods
 
 		public static int GetMaximalElement(int[,] a)
 		{
+
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
 			int max = a[0, 0];
 			for (int i = 0; i < a.GetLength(0); i++)
 			{
@@ -33,6 +44,31 @@ namespace HWMethods
 				}
 			}
 			return max;
+		}
+
+		public static int[] GetMinimalElementsIndex(int[,] a)
+		{
+
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
+			int min = a[0, 0];
+			int[] minIndex = new int[2];
+			for (int i = 0; i < a.GetLength(0); i++)
+			{
+				for (int j = 0; j < a.GetLength(1); j++)
+				{
+					if (a[i, j] < min)
+					{
+						min = a[i, j];
+                        minIndex[0] = i;
+						minIndex[1] = j;
+					}
+				}
+			}
+			return minIndex;
 		}
 
 		public static int[,] GenerateRandom(int lengthX, int lengthY)
