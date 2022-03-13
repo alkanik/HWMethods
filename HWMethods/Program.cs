@@ -7,4 +7,6 @@ int[,] a = TwoDArraysController.GenerateRandom(x,y);
 
 TwoDArraysController.Print(a);
 
-Console.WriteLine(TwoDArraysController.GetCountElementsLargerThanNeighbors(a));
+Console.WriteLine();
+
+TwoDArraysController.Print(TwoDArraysController.FlipMainDiagonal(a));

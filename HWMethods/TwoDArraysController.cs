@@ -116,6 +116,28 @@ namespace HWMethods
 			return count;
         }
 
+		public static int[,] FlipMainDiagonal(int[,] a)
+        {
+			if (a.GetLength(0)!= a.GetLength(1))
+			{
+				throw new Exception("a.GetLength(0) must be equal a.GetLength(1)");
+			}
+
+			int[,] flipedArray = Copy(a);
+			
+			for (int i = 0; i< flipedArray.GetLength(0); i++)
+            {
+				for (int j = i+1; j< flipedArray.GetLength(1); j++)
+                {
+					int tmp = flipedArray[i, j];
+					flipedArray[i, j] = flipedArray[j, i];
+					flipedArray[j, i] = tmp;
+                }
+            }
+			return flipedArray;
+        }
+
+
 		public static int[,] GenerateRandom(int lengthX, int lengthY)
 		{
 			Random r = new Random();
@@ -151,6 +173,13 @@ namespace HWMethods
 				}
 				Console.WriteLine();
 			}
+		}
+
+		public static int[,] Copy(int[,] a)
+		{
+			int[,] newArray = new int[a.GetLength(0), a.GetLength(1)];
+			Array.Copy(a, newArray, a.Length);
+			return newArray;
 		}
 	}
 }
