@@ -5,6 +5,11 @@ namespace HWMethods
 	{
 		public static int Exponentiate(int a, int b)
 		{
+			if (b<0)
+            {
+				throw new Exception("b must be >=0");
+			}
+
 			int tmp = 1;
 			int result = 1;
 
@@ -18,7 +23,12 @@ namespace HWMethods
 
 		public static int[] GetNumbersDivisibleByA(int a)
 		{
-			if (a > 1000)
+			if (a<=0)
+            {
+				throw new Exception("a must be positive");
+            }
+
+			else if (a > 1000)
 			{
 				int[] result = new int[0];
 				return result;
@@ -46,6 +56,11 @@ namespace HWMethods
 
 		public static int FindNumberOfNumbersWithLessSquare(int a)
 		{
+			if (a<0)
+            {
+				throw new Exception("a can't be less than zero");
+            }
+
 			int number = 0;
 
 			if (a > 0)
@@ -60,6 +75,11 @@ namespace HWMethods
 
 		public static int GetLargestDivisior(int a)
 		{
+			if (a < 0)
+            {
+				throw new Exception("a can't be less than zero");
+            }
+
 			int divisor = 0;
 
 			for (int i = 1; i < a; i++)
@@ -116,14 +136,10 @@ namespace HWMethods
 		}
 
 		public static int GetGreatestCommonDivisor(int a, int b)
-		{
-			if (a <= 0)
+		{ 
+			if (a <= 0 || b <= 0)
 			{
-				throw new Exception("a must be positive");
-			}
-			if (b <= 0)
-			{
-				throw new Exception("b must be positive");
+				throw new Exception("a & b must be positive number");
 			}
 
 			while (a != b)
@@ -170,6 +186,11 @@ namespace HWMethods
 
 		public static int GetNumberOfOddDigits(int a)
 		{
+			if (a<0)
+            {
+				throw new Exception("a can't be less than zero");
+            }
+
 			int x = a % 10;
 			int number = 0;
 			while (x != 0)
@@ -184,8 +205,13 @@ namespace HWMethods
             return number;
 		}
 
-		public static string WriteNumberBackwards(int a)
+		public static int GetNumberBackwards(int a)
 		{
+			if (a <= 0)
+			{
+				throw new Exception("a must be positive number");
+			}
+
 			string result = "";
 			while (a != 0)
 			{
@@ -193,21 +219,24 @@ namespace HWMethods
 				result = result + Convert.ToString(tmp);
 				a = a / 10;
 			}
-			return result;
+			return Convert.ToInt32(result);
 		}
 
-		public static void WriteNumbersWithMoreSumEvenDigits(int a)
+		public static int[] GetNumbersWithMoreSumEvenDigits(int n)
 		{
-			if (a <= 0)
+			if (n <= 0)
 			{
 				throw new Exception("a must be positive");
 			}
 
-			for (int i = 1; i <= a; i++)
+			int sumOdd = 0;
+			int sumEven = 0;
+			int length = 0;
+
+			for (int i = 1; i <= n; i++)
 			{
-				int sumOdd = 0;
-				int sumEven = 0;
 				int j = i;
+
 				while (j != 0)
 				{
 					int tmp = j % 10;
@@ -223,22 +252,49 @@ namespace HWMethods
 				}
 				if (sumEven > sumOdd)
 				{
-					Console.WriteLine(i);
+					length ++;
 				}
+				sumOdd = 0;
+				sumEven = 0;
 			}
+			int[] result = new int[length];
+			int ind = 0;
+			for (int i = 1; i <= n; i++)
+			{
+				int j = i;
+
+				while (j != 0)
+				{
+					int tmp = j % 10;
+					if (tmp % 2 == 1)
+					{
+						sumOdd += tmp;
+					}
+					else
+					{
+						sumEven += tmp;
+					}
+					j /= 10;
+				}
+				if (sumEven > sumOdd)
+				{
+					result[ind] = i;
+					ind++;
+				}
+				sumOdd = 0;
+				sumEven = 0;
+			}
+
+			return result;
 		}
 
 		public static string FindTheSameDigits(int a, int b)
 		{
-			if (a <= 0)
+			if (a <= 0 || b<=0)
 			{
-				throw new Exception("a must be positive");
+				throw new Exception("a & b must be positive");
 			}
-			if (b <= 0)
-			{
-				throw new Exception("b must be positive");
-			}
-
+			
 			bool result = false;
 
 			while (a != 0)
