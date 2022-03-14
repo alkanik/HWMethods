@@ -15,16 +15,16 @@ public class ConditionalsControllerTests
 		Assert.AreEqual(expected, actual);
 	}
 
-	//[TestCase(1, 1, Quarters.I)]
-	//[TestCase(1, -1, Quarters.II)]
-	//[TestCase(-2, 3, Quarters.III)]
-	//[TestCase(-5, -1, Quarters.IV)]
-	//[TestCase(0, 1, Quarters.OnAxle)]
-	//public void GetQuarterTest(double x, double y, Quarters expected)
-	//{
-	//	Quarter actual = ConditionalsController.GetQuarter(x,y);
-	//	Assert.AreEqual(expected, actual);
-	//}
+	[TestCase(1, 1, Quarters.I)]
+	[TestCase(-1, 1, Quarters.II)]
+	[TestCase(-2, -3, Quarters.III)]
+	[TestCase(5, -1, Quarters.IV)]
+	[TestCase(0, 1, Quarters.OneAxle)]
+	public void GetQuarterTest(double x, double y, Quarters expected)
+	{
+		Quarters actual = ConditionalsController.GetQuarter(x,y);
+		Assert.AreEqual(expected, actual);
+	}
 
 	[TestCase(1, 2, 3, new int[] {1,2,3})]
     [TestCase(2, 1, 3, new int[] { 1, 2, 3 })]
@@ -38,7 +38,7 @@ public class ConditionalsControllerTests
 		Assert.AreEqual(expected, actual);
 	}
 
-	[TestCase(1, 2, 1, new double[] { -1 })]
+	[TestCase(1.0d, 2.0d, 1, new double[] { -1 })]
 	[TestCase(1, 4, 1, new double[] { -0.2679491924311228, -3.732050807568877 })]
 	[TestCase(1, 1, 1, new double[] { })]
 	public void GetRootsOfQuadraticEquationTest(double a, double b, double c, double[] expected)

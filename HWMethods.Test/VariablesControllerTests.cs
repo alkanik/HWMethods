@@ -63,7 +63,7 @@ public class VariablesControllerTests
 
     [TestCase("qwe", "rty", "rty", "qwe")]
     [TestCase("123", "456", "456", "123")]
-    public void SwapValuesTest(ref string a, ref string b, string expectedA, string expectedB)
+    public void SwapValuesTest(string a, string b, string expectedA, string expectedB)
     {
         VariablesController.SwapValues(ref a, ref b);
         Assert.AreEqual(expectedA, a);

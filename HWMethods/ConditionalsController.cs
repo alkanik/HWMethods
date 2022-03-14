@@ -21,14 +21,7 @@ namespace HWMethods
 			return result;
 		}
 
-		public enum Quarters
-        {
-			I,
-			II,
-			III,
-			IV,
-			OneAxle
-		}
+		
 
 		public static Quarters GetQuarter(double x, double y)
 		{
