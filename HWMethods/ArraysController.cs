@@ -3,46 +3,14 @@ namespace HWMethods
 {
 	public class ArraysController
 	{
-		public static int[] GenerateArray(int length)
-		{
-			Random r = new Random();
-			int[] a = new int[length];
-
-			for (int i = 0; i < a.Length; i++)
-			{
-				a[i] = r.Next(-100,101);
-			}
-			return a;
-		}
-		
-		public static void PrintIntArray(int[] a)
-		{
-			for (int i = 0; i < a.Length; i++)
-			{
-				Console.Write($"{a[i]} ");
-            }
-			Console.WriteLine();
-		}
-
-		public static void PrintDoubleArray(double[] a)
-		{
-			for (int i = 0; i < a.Length; i++)
-			{
-				Console.Write(a[i] + " ");
-			}
-			Console.WriteLine();
-		}
-
-		public static int[] CopyArray(int[] a)
-		{
-			int[] newArray = new int[a.Length];
-			Array.Copy(a, newArray, a.Length);
-			return newArray;
-		}
-		
 
 		public static int FindMinimalElement(int[] a)
 		{
+			if (a.Length==0)
+            {
+				throw new Exception("a can't be null");
+            }
+
 			int min = a[0];
 			for (int i = 1; i< a.Length; i++)
 			{
@@ -56,6 +24,11 @@ namespace HWMethods
 
 		public static int FindMaximalElement(int[] a)
 		{
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
 			int max = a[0];
 			for (int i = 1; i < a.Length; i++)
 			{
@@ -68,11 +41,16 @@ namespace HWMethods
 		}
 		public static int FindIndexOfMinimalElement(int[] a)
 		{
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
 			int min = a[0];
 			int indexOfMinimalElement = 0;
 			for (int i = 1; i < a.Length; i++)
 			{
-				if (a[i] > min)
+				if (a[i] < min)
 				{
 					min = a[i];
 					indexOfMinimalElement = i;
@@ -83,6 +61,11 @@ namespace HWMethods
 		}
 		public static int FindIndexOfMaximalElement(int[] a)
 		{
+			if (a.Length == 0)
+			{
+				throw new Exception("a can't be null");
+			}
+
 			int max = a[0];
 			int indexOfMaximalElement = 0;
 			for (int i = 1; i < a.Length; i++)
@@ -111,7 +94,7 @@ namespace HWMethods
 
 		public static int[] ReverseArray(int[] a)
 		{
-			int[] result = CopyArray(a);
+			int[] result = Copy(a);
 			for (int i = 0; i < (result.Length / 2); i++)
 			{
 				int tmp = result[i];
@@ -134,7 +117,7 @@ namespace HWMethods
 
 		public static int[] SwapHalves(int[] a)
 		{
-			int[] result = CopyArray(a);
+			int[] result = Copy(a);
 
 			if (a.Length % 2 == 0)
 			{
@@ -159,7 +142,7 @@ namespace HWMethods
 
 		public static int[] SortAscending(int[] a)
         {
-			int[] result = CopyArray(a);
+			int[] result = Copy(a);
 			int tmp = 0;
 			for (int i = 0; i < result.Length - 1; i++)
 			{
@@ -178,7 +161,7 @@ namespace HWMethods
 
 		public static int[] SortDescending(int[] a)
         {
-			int[] result = CopyArray(a);
+			int[] result = Copy(a);
 			for (int i = result.Length - 1; i >= 0; i--)
 			{
 				int max = i;
@@ -196,6 +179,43 @@ namespace HWMethods
 			}
 
 			return result;
+		}
+
+		public static int[] GenerateArray(int length)
+		{
+			Random r = new Random();
+			int[] a = new int[length];
+
+			for (int i = 0; i < a.Length; i++)
+			{
+				a[i] = r.Next(-100, 101);
+			}
+			return a;
+		}
+
+		public static void PrintIntArray(int[] a)
+		{
+			for (int i = 0; i < a.Length; i++)
+			{
+				Console.Write($"{a[i]} ");
+			}
+			Console.WriteLine();
+		}
+
+		public static void PrintDoubleArray(double[] a)
+		{
+			for (int i = 0; i < a.Length; i++)
+			{
+				Console.Write(a[i] + " ");
+			}
+			Console.WriteLine();
+		}
+
+		public static int[] Copy(int[] a)
+		{
+			int[] newArray = new int[a.Length];
+			Array.Copy(a, newArray, a.Length);
+			return newArray;
 		}
 	}
 }
