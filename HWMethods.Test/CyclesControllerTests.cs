@@ -39,16 +39,11 @@ public class CyclesControllerTests
 	[TestCase(1000, 31)]
 	[TestCase(1,0)]
 	[TestCase(0, 0)]
+	[TestCase(-2, 0)]
 	public void FindNumberOfNumbersWithLessSquareTest(int a, int expected)
 	{
 		int actual = CyclesController.FindNumberOfNumbersWithLessSquare(a);
 		Assert.AreEqual(expected, actual);
-	}
-
-	[TestCase(-2)]
-	public void FindNumberOfNumbersWithLessSquare_WhenALessZero_ThrowException(int a)
-	{
-		Assert.Throws<Exception>(() => CyclesController.FindNumberOfNumbersWithLessSquare(a));
 	}
 
 	[TestCase(500, 250)]
@@ -94,17 +89,11 @@ public class CyclesControllerTests
 	[TestCase(23, 3, 1)]
 	[TestCase(125, 50, 25)]
 	[TestCase(1, 1, 1)]
+	[TestCase(-25, 5, 5)]
 	public void GetGreatestCommonDivisorTest(int a, int b, int expected)
 	{
 		int actual = CyclesController.GetGreatestCommonDivisor(a,b);
 		Assert.AreEqual(expected, actual);
-	}
-
-	[TestCase(-2, 5)]
-	[TestCase(7,0)]
-	public void GetGreatestCommonDivisor_WhenAOrBLessOrEqualZero_ThrowException(int a, int b)
-	{
-		Assert.Throws<Exception>(() => CyclesController.GetGreatestCommonDivisor(a,b));
 	}
 
 	[TestCase(8, 2)]
@@ -126,6 +115,7 @@ public class CyclesControllerTests
 	[TestCase(15, 2)]
 	[TestCase(66, 0)]
 	[TestCase(0,0)]
+	[TestCase(-123, 2)]
 	public void GetNumberOfOddDigitsTest(int a, int expected)
 	{
 		int actual = CyclesController.GetNumberOfOddDigits(a);

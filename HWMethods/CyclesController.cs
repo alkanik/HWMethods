@@ -56,11 +56,6 @@ namespace HWMethods
 
 		public static int FindNumberOfNumbersWithLessSquare(int a)
 		{
-			if (a<0)
-            {
-				throw new Exception("a can't be less than zero");
-            }
-
 			int number = 0;
 
 			if (a > 0)
@@ -136,11 +131,8 @@ namespace HWMethods
 		}
 
 		public static int GetGreatestCommonDivisor(int a, int b)
-		{ 
-			if (a <= 0 || b <= 0)
-			{
-				throw new Exception("a & b must be positive number");
-			}
+		{
+			a = Math.Abs(a);
 
 			while (a != b)
 			{
@@ -186,10 +178,7 @@ namespace HWMethods
 
 		public static int GetNumberOfOddDigits(int a)
 		{
-			if (a<0)
-            {
-				throw new Exception("a can't be less than zero");
-            }
+			a = Math.Abs(a);
 
 			int x = a % 10;
 			int number = 0;
