@@ -1,8 +1,8 @@
 ﻿using HWMethods;
 
-//int [] a = new int[3] { 1, 2, 3 };
-int a = 0;
-int b = 210;
+int [] a = new int[3] { 1, 2, 3 };
+//double a = 2.0;
+//double b = -2.0;
 
-//ArraysController.PrintIntArray(CyclesController.GetNumbersWithMoreSumEvenDigits(n));
-Console.WriteLine(CyclesController.FindTheSameDigits(a,b));
+//ArraysController.PrintIntArray(ArrayCo.GetNumberOfOddElements(n));
+Console.WriteLine(ArraysController.GetNumberOfOddElements(a));

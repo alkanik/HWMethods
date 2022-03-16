@@ -10,16 +10,11 @@ public class CyclesControllerTests
 	[TestCase(5, 0, 1)]
 	[TestCase(0, 5, 0)]
 	[TestCase(-7, 5, -16807)]
-	public void ExponentiateTest(int a, int b, int expected)
+	[TestCase(2d, -2d, 0.25d)]
+	public void ExponentiateTest(double a, double b, double expected)
 	{
-		int actual = CyclesController.Exponentiate(a, b);
+		double actual = CyclesController.Exponentiate(a, b);
 		Assert.AreEqual(expected, actual);
-	}
-
-	[TestCase(2,-2)]
-	public void Exponentiate_WhenBLessZero_ThrowException(int a, int b)
-	{
-		Assert.Throws<Exception>(() => CyclesController.Exponentiate(a,b));
 	}
 
 	[TestCase(500, new int[] {500,1000})]
@@ -120,12 +115,6 @@ public class CyclesControllerTests
 	{
 		int actual = CyclesController.GetNumberOfOddDigits(a);
 		Assert.AreEqual(expected, actual);
-	}
-
-	[TestCase(-2)]
-	public void GetNumberOfOddDigits_WhenALessOrEqualZero_ThrowException(int a)
-	{
-		Assert.Throws<Exception>(() => CyclesController.GetNumberOfOddDigits(a));
 	}
 
 	[TestCase(1, 1)]

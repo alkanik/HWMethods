@@ -3,21 +3,29 @@ namespace HWMethods
 {
 	public class CyclesController
 	{
-		public static int Exponentiate(int a, int b)
+		public static double Exponentiate(double a, double b)
 		{
-			if (b<0)
+			double tmp = 1;
+			double result = 1;
+
+			if (b>0)
             {
-				throw new Exception("b must be >=0");
+				while (tmp <= b)
+				{
+					result = result * a;
+					tmp++;
+				}
 			}
+			 else if (b<0)
+            {
+				while (tmp <= Math.Abs(b))
+				{
+					result = result * a;
+					tmp++;
+				}
 
-			int tmp = 1;
-			int result = 1;
-
-			while (tmp <= b)
-			{
-				result = result * a;
-				tmp++;
-			}
+				result = 1 / result;
+			}			
             return result;
 		}
 

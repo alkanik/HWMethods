@@ -83,6 +83,44 @@ public class ArraysControllerTests
 		Assert.AreEqual(expected, actual);
 	}
 
+	[TestCase(new int[] { 1, 2, 3 }, 1)]
+	[TestCase(new int[] { -1, 100, 2, 1 }, 2)]
+	[TestCase(new int[] { }, 0)]
+	public void GetNumberOfOddElementsTest(int[] a, int expected)
+	{
+		int actual = ArraysController.GetNumberOfOddElements(a);
+		Assert.AreEqual(expected, actual);
+	}
+
+	[TestCase(new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 })]
+	[TestCase(new int[] { -1, 100, 2, 1 }, new int[] { 2, 1, -1, 100 })]
+	[TestCase(new int[] { 1}, new int[] { 1})]
+	[TestCase(new int[] { }, new int[] { })]
+	public void SwapHalvesTest(int[] a, int[] expected)
+	{
+		int[] actual = ArraysController.SwapHalves(a);
+		Assert.AreEqual(expected, actual);
+	}
+
+	[TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 })]
+	[TestCase(new int[] { -1, 100, 2, 1 }, new int[] { -1, 1, 2, 100 })]
+	[TestCase(new int[] { 1 }, new int[] { 1 })]
+	[TestCase(new int[] { }, new int[] { })]
+	public void SortAscendingTest(int[] a, int[] expected)
+	{
+		int[] actual = ArraysController.SortAscending(a);
+		Assert.AreEqual(expected, actual);
+	}
+
+	[TestCase(new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 })]
+	[TestCase(new int[] { -1, 100, 2, 1 }, new int[] { 100, 2, 1, -1 })]
+	[TestCase(new int[] { 1 }, new int[] { 1 })]
+	[TestCase(new int[] { }, new int[] { })]
+	public void SortDescendingTest(int[] a, int[] expected)
+	{
+		int[] actual = ArraysController.SortDescending(a);
+		Assert.AreEqual(expected, actual);
+	}
 
 	[TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 })]
 	[TestCase(new int[] { 1, -1, 2 }, new int[] { 1, -1, 2 })]

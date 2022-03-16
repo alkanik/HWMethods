@@ -111,7 +111,7 @@ namespace HWMethods
 		{
 			int numberOfOddElements = 0;
 
-			for (int i = 1; i <= a.Length; i += 2)
+			for (int i = 1; i < a.Length; i += 2)
 			{
 				numberOfOddElements += 1;
 			}
