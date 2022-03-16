@@ -74,6 +74,16 @@ public class ArraysControllerTests
 		Assert.AreEqual(expected, actual);
 	}
 
+	[TestCase(new int[] { 1, 2, 3 }, new int[] { 3,2,1 })]
+	[TestCase(new int[] { -1, 100, 2, 1 }, new int[] { 1, 2, 100, -1 })]
+	[TestCase(new int[] { }, new int[] { })]
+	public void ReverseTest(int[] a, int[] expected)
+	{
+		int[] actual = ArraysController.Reverse(a);
+		Assert.AreEqual(expected, actual);
+	}
+
+
 	[TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 })]
 	[TestCase(new int[] { 1, -1, 2 }, new int[] { 1, -1, 2 })]
 	[TestCase(new int[] { }, new int[] { })]

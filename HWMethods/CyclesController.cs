@@ -289,30 +289,58 @@ namespace HWMethods
 		}
 
 		public static string FindTheSameDigits(int a, int b)
-		{
-			if (a <= 0 || b<=0)
-			{
-				throw new Exception("a & b must be positive");
-			}
-			
+		{	
 			bool result = false;
+			a = Math.Abs(a);
+			b = Math.Abs(b);
 
-			while (a != 0)
+			if (a != 0 && b != 0)
 			{
-				int digitA = a % 10;
+				while (a != 0)
+				{
+					int digitA = a % 10;
+					while (b != 0)
+					{
+						int digitB = b % 10;
+						if (digitA == digitB)
+						{
+							result = true;
+							break;
+						}
+						b = b / 10;
+					}
+					a = a / 10;
+				}
+			}
+			else if (a == 0)
+			{
 				while (b != 0)
 				{
 					int digitB = b % 10;
-					if (digitA == digitB)
+					if (digitB == 0)
 					{
 						result = true;
 						break;
 					}
 					b = b / 10;
 				}
-				a = a / 10;
 			}
+			else
+            {
+				while (a != 0)
+				{
+					int digitA = a % 10;
+					if (digitA == 0)
+					{
+						result = true;
+						break;
+					}
+					a = a / 10;
+				}
+			}
+
 			string answer = "NO";
+
 			if (result == true)
             {
 				answer = "YES";

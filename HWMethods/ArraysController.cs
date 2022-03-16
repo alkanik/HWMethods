@@ -95,7 +95,7 @@ namespace HWMethods
 			return sumOfOddElements;
 		}
 
-		public static int[] ReverseArray(int[] a)
+		public static int[] Reverse(int[] a)
 		{
 			int[] result = Copy(a);
 			for (int i = 0; i < (result.Length / 2); i++)

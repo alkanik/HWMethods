@@ -169,20 +169,15 @@ public class CyclesControllerTests
 		Assert.Throws<Exception>(() => CyclesController.GetNumbersWithMoreSumEvenDigits(n));
 	}
 
-	[TestCase(7, 777, "YES")]
+	[TestCase(-7, 777, "YES")]
 	[TestCase(50, 65909, "YES")]
-	[TestCase(11, 22, "NO")]
+	[TestCase(-11, 22, "NO")]
+	[TestCase(0, 10, "YES")]
+	[TestCase(210, 0, "YES")]
 	public void FindTheSameDigitsTest(int a, int b, string expected)
 	{
 		string actual = CyclesController.FindTheSameDigits(a,b);
 		Assert.AreEqual(expected, actual);
-	}
-
-	[TestCase(-2,1)]
-	[TestCase(2,0)]
-	public void FindTheSameDigits_WhenAOrBLessOrEqualZero_ThrowException(int a, int b)
-	{
-		Assert.Throws<Exception>(() => CyclesController.FindTheSameDigits(a,b));
 	}
 
 }
