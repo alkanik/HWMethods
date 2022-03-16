@@ -1,7 +1,7 @@
 ﻿using HWMethods;
 
-int n = 20;
+int [] a = new int[3] { 1, 2, 3 };
 //int b = 1;
 
-ArraysController.PrintIntArray(CyclesController.GetNumbersWithMoreSumEvenDigits(n));
-//Console.WriteLine(CyclesController.GetNumberBackwards(a));
+//ArraysController.PrintIntArray(CyclesController.GetNumbersWithMoreSumEvenDigits(n));
+Console.WriteLine(ArraysController.GetSumOfOddElements(a));

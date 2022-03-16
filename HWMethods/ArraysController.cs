@@ -8,7 +8,7 @@ namespace HWMethods
 		{
 			if (a.Length==0)
             {
-				throw new Exception("a can't be null");
+				throw new Exception("a can't be empty");
             }
 
 			int min = a[0];
@@ -26,7 +26,7 @@ namespace HWMethods
 		{
 			if (a.Length == 0)
 			{
-				throw new Exception("a can't be null");
+				throw new Exception("a can't be empty");
 			}
 
 			int max = a[0];
@@ -43,7 +43,7 @@ namespace HWMethods
 		{
 			if (a.Length == 0)
 			{
-				throw new Exception("a can't be null");
+				throw new Exception("a can't be empty");
 			}
 
 			int min = a[0];
@@ -63,7 +63,7 @@ namespace HWMethods
 		{
 			if (a.Length == 0)
 			{
-				throw new Exception("a can't be null");
+				throw new Exception("a can't be empty");
 			}
 
 			int max = a[0];
@@ -83,10 +83,13 @@ namespace HWMethods
 		public static int GetSumOfOddElements(int[] a)
 		{
 			int sumOfOddElements = 0;
-			
-			for (int i = 1; i <= a.Length; i+=2)
-			{
-				sumOfOddElements += a[i];
+
+			if (a.Length > 1)
+            {
+				for (int i = 1; i < a.Length; i += 2)
+				{
+					sumOfOddElements += a[i];
+				}
 			}
 
 			return sumOfOddElements;

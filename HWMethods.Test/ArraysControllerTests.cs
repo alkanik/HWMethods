@@ -65,6 +65,15 @@ public class ArraysControllerTests
 		Assert.Throws<Exception>(() => ArraysController.FindIndexOfMaximalElement(a));
 	}
 
+	[TestCase(new int[] { 1, 2, 3 }, 2)]
+	[TestCase(new int[] { -1, 100, 2, 1 }, 101)]
+	[TestCase(new int[] { }, 0)]
+	public void GetSumOfOddElementsTest(int[] a, int expected)
+	{
+		int actual = ArraysController.GetSumOfOddElements(a);
+		Assert.AreEqual(expected, actual);
+	}
+
 	[TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 })]
 	[TestCase(new int[] { 1, -1, 2 }, new int[] { 1, -1, 2 })]
 	[TestCase(new int[] { }, new int[] { })]
